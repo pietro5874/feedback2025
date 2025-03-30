@@ -1,4 +1,5 @@
 import iconStar from "./assets/icon-star.svg"
+import illustrationthankyou from "./assets/illustration-thank-you.svg"
 import { useState } from "react"
 
 export function App() {
@@ -28,7 +29,7 @@ export function App() {
 
         <h1 className="text-2xl font-bold mb-2.5">How did we do?</h1>
 
-        <p className="text-sn text-light-grey mb-6 leading-1">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
+        <p className="text-sm text-light-grey mb-6 leading-1">Please let us know how we did with your support request. All feedback is appreciated to help us improve our offering!</p>
         <div className="flex justify-between mb-6">
           <input type="button" value={1} className="bg-dark-blue w-10.5 h-10.5 rounded-full text-medium-grey text-sm font-bold focus:bg-medium-grey focus:text-white" onClick={() => handleNotaAvaliacao(1)}/>
           <input type="button" value={2} className="bg-dark-blue w-10.5 h-10.5 rounded-full text-medium-grey text-sm font-bold focus:bg-medium-grey focus:text-white" onClick={() => handleNotaAvaliacao(2)}/>
@@ -40,8 +41,13 @@ export function App() {
         <button onClick={handleSubmit} className="bg-orange w-full uppercase tracking-1 font-bold rounded-3xl text-sm py-3">Submit</button>
       </div>
     ) : (
-      <div className="bg-gradient-dark text-white mx-6 rounded-2xl font-overpass">
-        <p>{notaAvaliacao}</p>
+      <div className="bg-gradient-dark text-white mx-6 p-6 rounded-2xl font-overpass">
+        <img className="mx-auto mb-6" src={illustrationthankyou} alt="illustration thank you" />
+
+        <p className="text-orange bg-dark-blue w-fit mx-auto px-3 py-1.25 rounded-3xl mb-6">You selected {notaAvaliacao} out of 5</p>
+
+        <h1 className="text-2xl font-bold mb-2.5 text-center">thank you!</h1>
+        <p className="text-sm text-light-grey leading-1 text-center">We appreciate you taking the time to give a rating. If you ever need more support, don’t hesitate to get in touch!</p>
       </div>
     )
   )
